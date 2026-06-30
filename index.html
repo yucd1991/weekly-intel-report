@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compass Weekly | 自動車・HRインテリジェンス</title>
+<meta name="description" content="自動車業界とHRの最前線を、週に一度。グローバル・APAC・マレーシア・日本の動きをキュレーション。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F6F2EA;
+    --paper-warm: #EFE8D8;
+    --ink: #2B2620;
+    --ink-soft: #5C5448;
+    --line: #D8CFBC;
+    --accent: #5B6E4F;
+    --accent-deep: #3D4A35;
+    --rust: #A9542F;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #1C1A16;
+      --paper-warm: #25221C;
+      --ink: #EDE7D9;
+      --ink-soft: #A89E8C;
+      --line: #3A352B;
+      --accent: #8FAE7E;
+      --accent-deep: #A8C797;
+      --rust: #D08259;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', serif;
+    font-weight: 400;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ===== Masthead ===== */
+  header.masthead {
+    border-bottom: 1px solid var(--line);
+    padding: 64px 0 28px;
+  }
+
+  .masthead-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    color: var(--accent-deep);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+
+  .masthead h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(36px, 6vw, 56px);
+    font-weight: 800;
+    margin: 0 0 14px;
+    letter-spacing: 0.02em;
+  }
+
+  .masthead .tagline {
+    font-family: 'Source Serif 4', serif;
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin: 0;
+    letter-spacing: 0.04em;
+  }
+
+  /* ===== Issue list ===== */
+  main { padding: 56px 0 120px; }
+
+  .section-label {
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .issue-card {
+    display: block;
+    text-decoration: none;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--line);
+    transition: opacity 0.2s ease;
+  }
+  .issue-card:hover { opacity: 0.65; }
+  .issue-card:first-of-type { padding-top: 0; }
+
+  .issue-no {
+    font-size: 12px;
+    color: var(--accent-deep);
+    letter-spacing: 0.18em;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .issue-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    line-height: 1.5;
+  }
+
+  .issue-date {
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  .issue-topics {
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+
+  .empty-state {
+    padding: 48px 0;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 14px;
+    border: 1px dashed var(--line);
+    border-radius: 2px;
+  }
+
+  /* ===== About strip ===== */
+  .about {
+    margin-top: 64px;
+    padding-top: 48px;
+    border-top: 1px solid var(--line);
+  }
+  .about p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    max-width: 56ch;
+  }
+  .about .categories {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .tag {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    padding: 6px 14px;
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    color: var(--accent-deep);
+  }
+
+  footer {
+    text-align: center;
+    padding: 40px 0 60px;
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 600px) {
+    header.masthead { padding: 48px 0 24px; }
+    main { padding: 40px 0 80px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow">Weekly Intelligence Digest</div>
+    <h1>Compass Weekly</h1>
+    <p class="tagline">自動車産業とHRの最前線を、週に一度、静かに見渡す。</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="section-label">Issues</div>
+
+    <div id="issue-list">
+      <!-- 号がここに自動で追加されます -->
+      <div class="empty-state">まだ号がありません。最初のレポートが公開されるとここに表示されます。</div>
+    </div>
+
+    <div class="about">
+      <p>毎週、自動車業界（グローバル／APAC・オセアニア／マレーシア／日本）とHRの最前線（グローバル／日本／マレーシア／APAC）を独自にキュレーションし、お届けしています。</p>
+      <div class="categories">
+        <span class="tag">自動車：グローバル</span>
+        <span class="tag">自動車：APAC・オセアニア</span>
+        <span class="tag">自動車：マレーシア</span>
+        <span class="tag">自動車：日本</span>
+        <span class="tag">HR：グローバル</span>
+        <span class="tag">HR：日本</span>
+        <span class="tag">HR：マレーシア</span>
+        <span class="tag">HR：APAC</span>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  Compass Weekly — Curated by Claude
+</footer>
+
+<script>
+  // reports/index.json を読み込んで号一覧を描画
+  fetch('reports/index.json')
+    .then(r => r.json())
+    .then(issues => {
+      if (!issues || issues.length === 0) return;
+      const list = document.getElementById('issue-list');
+      list.innerHTML = '';
+      issues.slice().reverse().forEach(issue => {
+        const a = document.createElement('a');
+        a.className = 'issue-card';
+        a.href = 'reports/' + issue.file;
+        a.innerHTML = `
+          <div class="issue-no">ISSUE No. ${issue.number}</div>
+          <h2 class="issue-title">${issue.title}</h2>
+          <div class="issue-date">${issue.date}</div>
+          <div class="issue-topics">${issue.summary || ''}</div>
+        `;
+        list.appendChild(a);
+      });
+    })
+    .catch(() => {});
+</script>
+
+</body>
+</html>
